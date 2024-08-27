@@ -6,8 +6,7 @@ public class Solution {
         String str = sc.next();
         int n = sc.nextInt();
         int len = str.length();
-        if(len >=1 && len <=10 && n>=1 && n<=5 ){
-            for(int i = 0; i<n; i++) System.out.print(str);
-        }
+        
+        System.out.print(str.repeat(n));
     }
 }
