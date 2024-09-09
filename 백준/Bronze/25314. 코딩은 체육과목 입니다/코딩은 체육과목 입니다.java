@@ -1,14 +1,13 @@
-import java.util.Scanner;
-
+import java.util.*;
 public class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int num1 = sc.nextInt();
-        int repeat = num1/4;
-
-        for(int i = 0; i < repeat; i++) {
-            System.out.print("long ");
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+        int by = sc.nextInt();
+        String result = "";
+        for(int i = 0 ; i<by/4; i++){
+            result += "long ";
         }
-        System.out.print("int");
-    }
+        result +="int";
+        System.out.println(result);
+	}
 }
