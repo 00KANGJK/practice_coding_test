@@ -1,0 +1,40 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine());
+
+        int[] arr = new int[N];
+        for(int i = 0; i < N; i++) {
+            arr[i] = Integer.parseInt(br.readLine());
+        }
+
+        Arrays.sort(arr);
+
+        int minAdditions = Integer.MAX_VALUE;
+
+        for(int i = 0; i < N; i++) {
+            int needed = 0;
+
+            int start = arr[i];
+
+            
+            for(int j = 0; j < 5; j++) {
+                int currentValue = start + j;
+                if(Arrays.binarySearch(arr, currentValue) < 0) {
+                    needed++;
+                }
+            }
+
+            minAdditions = Math.min(minAdditions, needed);
+        }
+
+        System.out.println(minAdditions);
+        br.close();
+    }
+}
